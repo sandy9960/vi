@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse and Input Event Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <p>This example demonstrates how to assign "onmouseover", "onmouseout", and "onfocus" events.</p>
+
+  <!-- Mouse events example -->
+  <h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Mouse over me</h1>
+
+  <!-- Input focus example -->
+  <p>Enter your name:</p>
+  <input type="text" onfocus="myFunction(this)" onblur="resetColor(this)">
+  <p>When the input field gets focus, its background color changes.</p>
+
+  <script>
+    // Change text color on mouse over/out
+    function mouseOver() {
+      document.getElementById("demo").style.color = "red";
+    }
+
+    function mouseOut() {
+      document.getElementById("demo").style.color = "black";
+    }
+
+    // Change background color when input gets focus
+    function myFunction(x) {
+      x.style.background = "blue";
+    }
+
+    // Optional: reset color when focus is lost
+    function resetColor(x) {
+      x.style.background = "white";
+    }
+  </script>
+
+</body>
+</html>
